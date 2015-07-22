@@ -1,0 +1,62 @@
+﻿@using Kendo.Mvc.UI;
+@model CarRental.Models.Car
+
+<link rel="stylesheet" href="~/Content/kendo/kendo.common.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.common-bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.material.min.css" />
+
+@{
+    ViewBag.Title = "ListOfCars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List Of Cars</h2>
+
+<br />
+<br />
+
+@Html.ActionLink("Create Car", "CreationCar")
+<hr />
+<br />
+
+@(Html.Kendo().Grid<CarRental.Models.Car>()
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Picture.Id)
+                       .ClientTemplate("<img src='" + @Url.Action("RenderImage", "Administration", new { Id = "#=Id#" }, @Request.Url.Scheme) + "' height='100' width='150' />")
+                       .Title("Picture").Width(160).Locked(true).Lockable(false);
+        columns.Bound(p => p.Brand).Width(120).Locked(true).Lockable(false);
+        columns.Bound(p => p.Model).Width(120).Locked(true).Lockable(false);
+        columns.Bound(p => p.Status).Width(120).Locked(true).Lockable(false);
+        columns.Bound(p => p.Location).Width(120).Locked(true).Lockable(false);
+        columns.Bound(p => p.PickupDateTime).Width(120);
+        columns.Bound(p => p.ReturnDateTime).Width(120);
+        columns.Bound(p => p.Passengers).Width(100);
+        columns.Bound(p => p.Price).Width(100).Locked(true).Lockable(false);
+        columns.Bound(p => p.AdditionInformation).Width(150);
+        columns.Bound(p => p.AirConditioning).Width(100);
+        columns.Bound(p => p.Transmission).Width(100);
+        columns.Template(x => null).ClientTemplate(Html.ActionLink("Edit", "EditCar", new { Id = "GUID" }, htmlAttributes: new { @class = "k-button k-button-icontext" }).ToHtmlString().Replace("GUID", "#=Id#")).Width(172);
+        columns.Command(command => command.Destroy()).Width(172);
+    })
+    .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+    .Scrollable(scrollable => scrollable.Height(420))
+    .Reorderable(reorderable => reorderable.Columns(true))
+    .Filterable()
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .ColumnMenu()
+    .Resizable(resizable => resizable.Columns(true))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model => model.Id(p => p.Id))
+        .Read(read => read.Action("GetCars", "Administration"))
+    //.Update(update => update.Action("UpdateCar", "Administration"))
+    .Destroy(destroy => destroy.Action("DestroyCar", "Administration"))
+    .ServerOperation(false)
+    .Batch(true)
+    )
+)

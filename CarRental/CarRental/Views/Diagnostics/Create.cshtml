@@ -1,0 +1,89 @@
+﻿@using Kendo.Mvc.UI;
+
+@model CarRental.Models.Diagnostics
+<link rel="stylesheet" href="~/Content/kendo/kendo.common.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.common-bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.material.min.css" />
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br/>
+<br />
+@using (Html.BeginForm("Create", "Diagnostics", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Diagnostics of car</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @(Html.Kendo().ComboBoxFor(model=>model.OrderId)
+                              .Name("OrderId")
+                              .DataTextField("ApplicationNumber.toString()")
+                              .DataValueField("OrderId")
+                              .HtmlAttributes(new {style="width:300px; max-width:300px"})
+                              .DataSource(source=>
+                              {
+                                  source.Read(read =>
+                                  {
+                                      read.Action("GetOrders", "Diagnostics");
+                                  });
+                              })
+                              .Filter(FilterType.Contains)
+                              .Height(300)
+                              //.HeaderTemplate("<div class=\"dropdown-header\">"+
+                              //                "<span class=\"k-widget k-header\">Car photo</span>" +                                                         /* #:data.Id#.jpg\" alt=\"#:data.Id#\"*/
+                              //                "<span class=\"k-widget k-header\">Details</span>" +
+                              //                "</div>")
+                              .Template("<span class=\"k-state-default\"><h4>#: data.ApplicationNumber #</h4><p>#:data.Brand# #:data.Model# №#:data.CarNumber#</p></span>")
+                )         
+
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DetectedFailure, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Kendo().CheckBoxFor(model => model.DetectedFailure)
+                @Html.ValidationMessageFor(model => model.DetectedFailure, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Kendo().EditorFor(model => model.Description).HtmlAttributes( new {id= "Description", style = "width: 70%; height: 20%;" }).Name("Description").Tools(tools=>tools.Clear())
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RepairCost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Kendo().NumericTextBoxFor(model => model.RepairCost).Name("RepairCost").Format("c")
+                @Html.ValidationMessageFor(model => model.RepairCost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+</div>
+}
+
+<br/>
+
+<div>
+    @Html.ActionLink("Back to list", "Index","Diagnostics", new { @style = "font-size: 15px; text-decoration: underline;" })
+</div>
+

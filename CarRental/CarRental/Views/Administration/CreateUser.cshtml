@@ -1,0 +1,137 @@
+﻿@model CarRental.Models.ApplicationUser
+
+<link rel="stylesheet" href="~/Content/kendo/kendo.common.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.common-bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.material.min.css" />
+
+@{
+    ViewBag.Title = "CreateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Creation User</h2>
+@Html.ActionLink("Back", "Index")
+<hr/>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="demo-section k-header">
+        <div id="tickets">
+            <form class="k-content" id="ticketsForm">
+                <h3>Book Tickets</h3>
+                <ul>
+                    <li>
+                        <label for="UserName" class="required">User Name</label>
+                        @(Html.Kendo().TextBox()
+                              .Name("UserName")
+                              .HtmlAttributes(new { placeholder = "Full name", required = "required", validationmessage = "Enter {0}", style = "width:200px" })
+                        )
+                    </li>
+                    <li>
+                        <label for="Email" class="required">Email</label>
+                        @(Html.Kendo().TextBox()
+                              .Name("Email")
+                              .HtmlAttributes(new { placeholder = "e.g. myname@example.net", required = "required", type = "email", data_email_msg = "Email format is not valid", style = "width: 200px;" })
+                        )
+                    </li>
+                    <li>
+                        <label for="Phone" class="required">Phone</label>
+                        @(Html.Kendo().TextBox()
+                              .Name("Phone")
+                              .HtmlAttributes(new { placeholder = "Enter a ten digit number", pattern = "\\d{10}", required = "required", type = "tel", validationmessage = "Enter at least ten digits", style = "width: 200px;" })
+                        )
+                    </li>
+
+                    <li>
+                        <label for="Password" class="required">Password</label>
+                        @(Html.Kendo().TextBox()
+                              .Name("Password")
+                              .HtmlAttributes(new { placeholder = "Password", required = "required", type = "password", validationmessage = "Enter password", style = "width: 200px;" })
+                        )
+                    </li>
+
+                    <li class="confirm">
+                        <button class="k-button k-primary" type="submit">Submit</button>
+                    </li>
+                    <li class="status"></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+   }
+
+
+<style>
+    .k-textbox {
+        width: 11.8em;
+    }
+
+    .demo-section {
+        width: 400px;
+        padding: 0;
+    }
+
+    .k-primary{
+          color: #fff;
+          border-color: #909090;
+          background-image: none;
+          background-position: 50% 50%;
+          background-color: #8C8C8C;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+    }
+
+    #tickets {
+        width: 400px;
+        /*background: url('../content/web/validator/tickets.png') transparent no-repeat 30px 50%;*/
+        background-color: #FFFFFF;
+    }
+
+        #tickets form {
+            padding: 30px;
+            margin-left: 150px;
+        }
+
+        #tickets h3 {
+            font-weight: normal;
+            font-size: 1.4em;
+            margin: 0;
+            padding: 0 0 20px;
+        }
+
+        #tickets ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #tickets li {
+            margin: 5px 0;
+        }
+
+    label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        padding-right: 10px;
+        color:black;
+    }
+
+    .required {
+        font-weight: bold;
+    }
+
+    .accept, .status {
+        padding-left: 90px;
+    }
+
+    .confirm {
+        text-align: right;
+    }
+
+    span.k-tooltip {
+        margin-left: 6px;
+    }
+</style>

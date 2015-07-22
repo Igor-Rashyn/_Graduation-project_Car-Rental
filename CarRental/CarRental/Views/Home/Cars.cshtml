@@ -1,0 +1,105 @@
+﻿@using CarRental.WebUI.Models
+@using CarRental.HtmlHelpers
+@using CarRental.Models
+@model ListViewModel<Car>
+@{
+    ViewBag.Title = "Cars";
+}
+
+<br/>
+
+<div>
+    <div class="col-md-4">
+        <div class="well-new bs-component for">
+
+            @*@using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "form-horizontal" }))*@
+
+            @using (Ajax.BeginForm("SortView", "Cars", null, new AjaxOptions { UpdateTargetId = "tabledata", HttpMethod="GET" }, new { @class = "form-horizontal" } ))
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>Search</legend>
+                    <div class="form-group">
+                        <label for="inputPickupLocation" class="col-lg-4 control-label">Pickup Location</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder="Pickup Location">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="checkboxDifferentLocation" name="checkboxDifferentLocation"> Return car to a different location
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group hidden" id="formReturnLocation">
+                        <label for="inputReturnLocation" class="col-lg-4 control-label">Return Location</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" id="inputReturnLocation" name="inputReturnLocation" placeholder="Return Location">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPickupDate" class="col-lg-4 control-label">Pickup Date & Time</label>
+                        <div class='col-lg-8'>
+                            <input type='text' class="form-control" id='inputPickupDate' name="inputPickupDate" placeholder="Pickup Date & Time">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputReturnDate" class="col-lg-4 control-label">Return Date & Time</label>
+                        <div class='col-lg-8'>
+                            <input type='text' class="form-control" id='inputReturnDate' name="inputReturnDate" placeholder="Return Date & Time">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-primary pull-right" value="Search">Search</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            }
+        </div>
+
+    </div>
+
+    <div class="col-md-8">
+        <div class="sortingBlock">
+            <p> Sort Vehicle By: 
+                @Ajax.ActionLink("Price", "SortView", "Cars", new {sortBy = "Price" }, new AjaxOptions {UpdateTargetId= "tabledata" })
+                 | @Ajax.ActionLink("Size", "SortView", "Cars", new {sortBy = "Size" }, new AjaxOptions { UpdateTargetId = "tabledata" })
+                | @Ajax.ActionLink("Consumption", "SortView", "Cars", new {sortBy = "Consumption" }, new AjaxOptions { UpdateTargetId = "tabledata"})
+            </p>
+        </div>
+
+        <div id="tabledata">
+            @Html.Partial("SortView", Model.Model)
+        </div>
+
+        <div>
+          @Html.PageLinks(Model.PagingInfo, x => Url.Action("Cars", new { Page = x }))
+        </div> 
+
+    </div>
+</div>
+
+@section scripts {
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#inputPickupDate').datetimepicker();
+        });
+
+        $(function () {
+            $('#inputReturnDate').datetimepicker();
+        });
+
+        $("#checkboxDifferentLocation").change(function () {
+            if(this.checked) {
+                $('#formReturnLocation').removeClass('hidden'); // удалить
+            } else {
+                $('#formReturnLocation').addClass('hidden'); // добавить класс
+            }
+        });
+    </script>
+}

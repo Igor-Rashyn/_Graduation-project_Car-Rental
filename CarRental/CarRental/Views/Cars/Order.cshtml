@@ -1,0 +1,93 @@
+﻿@model CarRental.Models.Order
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order</h2>
+
+@using (Html.BeginForm("Create","Cars",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    @Html.ValidationSummary(true,"",new {@class = "text-danger"})
+        <div class="form-group row">
+            <div class="col-md-4">
+                <img class="img-thumbnail" width="250" src="@Url.Action("RenderImage", "Administration", new { Model.Car.Id })" />
+                @Html.HiddenFor(m => m.CarId)
+            </div>
+             <div class="col-md-4">
+                <h4>@Html.DisplayFor(m => m.Car.Brand) @Html.DisplayFor(m => m.Car.Model)</h4>
+                <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> @Html.DisplayFor(m => m.Car.Passengers) @Html.LabelFor(m => m.Car.Passengers)</p>
+                <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> @Html.DisplayFor(m => m.Car.AmountOfLuggage)</p>
+                @if (@Model.Car.Transmission == true)
+                {
+                    <p><span class="glyphicon glyphicon-text-background" aria-hidden="true"> </span>Automatic @Html.LabelFor(m => m.Car.Transmission)</p>
+                }
+                @if (@Model.Car.AirConditioning == true)
+                {
+                    <p><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> @Html.LabelFor(m => m.Car.AirConditioning)</p>
+                }
+                <p><span class="glyphicon glyphicon-tint" aria-hidden="true"></span> @Html.DisplayFor(m => m.Car.FuelConsumption) km/liters</p>
+             </div>
+
+            <div class="col-md-4">
+                <br/>
+                <br />
+                <br />
+                <br />
+                <span id="totalPrice" style="font-size:35px;"> @ViewBag.TotalPrice </span>
+                <span id="currency"> 
+                    
+                    @if(@ViewBag.TotalPrice!=null)
+                    {               
+                    @ViewBag.Currency
+                    }
+                </span>
+            </div>
+       </div>
+
+    @Html.Partial("_OrderForm", Model)
+
+    <div class="form-group">
+        <div class="col-md-offset-9 col-md-3">
+            <input type="reset" value="Cancel" class="btn btn-default", onclick="window.location.href='/Cars/Index'" />
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+    
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+    $("#PickupDateTime").change(function () {
+
+        var pickupDateTime = $("#PickupDateTime").val();
+        var returnDateTime = $("#ReturnDateTime").val();   
+
+        var days = (new Date(returnDateTime) - new Date(pickupDateTime))/(24*3600*1000);
+
+        var total=@Model.Car.Price*days;
+
+        $("#totalPrice").text(total);
+        $("#currency").text(" USD");
+    });
+
+    $("#ReturnDateTime").change(function () {
+
+        var pickupDateTime = $("#PickupDateTime").val();
+        var returnDateTime = $("#ReturnDateTime").val();   
+
+        var days = (new Date(returnDateTime) - new Date(pickupDateTime))/(24*3600*1000);
+
+        var total=@Model.Car.Price*days;
+
+        $("#totalPrice").text(total);
+        $("#currency").text(" USD");
+    });
+
+</script>
+}

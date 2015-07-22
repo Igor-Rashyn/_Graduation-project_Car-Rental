@@ -1,0 +1,40 @@
+﻿@using CarRental.Models
+@model Car
+
+<div class="col-md-12 signature">
+    <h4>@Model.Brand @Model.Model</h4>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/Content/Images/Home/slide-1.jpg" style="width:220px">
+    </div>
+    <div class="col-md-4">
+            <h4>@Model.Brand @Model.Model</h4>
+            <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> @Html.DisplayFor(m => m.Passengers) @Html.LabelFor(m => m.Passengers)</p>
+            <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> @Html.DisplayFor(m => m.AmountOfLuggage)</p>
+            @if (Model.Transmission == true)
+            {
+                <p><span class="glyphicon glyphicon-text-background" aria-hidden="true"> </span>Automatic @Html.LabelFor(m => m.Transmission)</p>
+            }
+              @if (@Model.AirConditioning == true)
+              {
+                  <p><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> @Html.LabelFor(m => m.AirConditioning)</p>
+              }
+            <p><span class="glyphicon glyphicon-tint" aria-hidden="true"></span> @Html.DisplayFor(m => m.FuelConsumption) km/liters</p>
+    </div>
+    <div class="col-md-4 col-lg-4">
+        <h3>@Html.DisplayFor(m=>m.Price) USD</h3>
+            @using (Html.BeginForm("Order","Cars"))
+            {
+                <div>
+                    @Html.HiddenFor(x=>x.Id)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-success" value="Order" />
+                 </div>
+            }
+    </div>
+</div>
+<div class="col-md-12">
+<hr />
+ </div>

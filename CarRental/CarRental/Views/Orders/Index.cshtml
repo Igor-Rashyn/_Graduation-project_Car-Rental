@@ -1,0 +1,60 @@
+﻿@model PagedList.IPagedList<CarRental.Models.Order>
+@using PagedList.Mvc
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/>
+<br/>
+@using (Html.BeginForm("Index", "Orders", FormMethod.Get))
+{
+    <div class="form-inline">
+            @Html.Label("Find by number:", new {@for= "inputSearch", @class= "control-label" })
+            @Html.TextBox("SearchString", null, new { @class = "form-control input-sm", @id="inputSearch", @placeholder="Search...." })
+            <input type="submit" value="Search" class="btn btn-default btn-sm">
+    </div>
+}
+
+<br />
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.ApplicationNumber)</td>
+                        <td>@Html.DisplayFor(m => item.FirstName)</td>
+                        <td>@Html.DisplayFor(m => item.LastName)</td>
+                        <td>@Html.DisplayFor(m => item.Email)</td>
+                        <td>@Html.DisplayFor(m => item.Phone)</td>
+                        <td>@Html.DisplayFor(m => item.Car.Brand)</td>
+                        <td>@Html.DisplayFor(m => item.Car.Model)</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                            @Html.ActionLink("Confirm", "Confirm", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <br />
+
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

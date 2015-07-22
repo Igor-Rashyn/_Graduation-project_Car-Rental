@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="9ea5529e-387b-476a-9c9d-67f8abf0fac3">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>CarRental/Content/bootstrap/navbar.less</FileRelativePath>
+        <ProjectRelativePath>CarRental/CarRental.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>17450336122560732534</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>11175286905434029511</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>CarRental/Content/bootstrap/mixins/grid-framework.less</FileRelativePath>
+        <ProjectRelativePath>CarRental/CarRental.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>11744836499136623632</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>15906834296972725549</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>

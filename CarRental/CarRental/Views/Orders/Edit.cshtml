@@ -1,0 +1,246 @@
+﻿@using CarRental.Models
+
+@model CarRental.Models.Order
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/>
+<br />
+@using (Html.BeginForm("Save", "Orders", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+     <div class="form-group row">
+            <div class="col-md-4">
+                <img src="~/Content/Images/Home/slide-1.jpg" style="width:220px">
+                @Html.HiddenFor(m => m.CarId, new { @id = "CarId" })
+                @Html.HiddenFor(m => m.Id)
+            </div>
+            <div class="col-md-4">
+                <h4 id="carBrandAndModel">@Html.DisplayFor(m => m.Car.Brand) @Html.DisplayFor(m => m.Car.Model)</h4>
+                <div class="row">
+                    <div class="col-md-1">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-1" id="carPassengers">
+                        @Html.DisplayFor(m => m.Car.Passengers)
+                    </div>
+                    <div class="col-md-10">
+                        @Html.LabelFor(m => m.Car.Passengers)
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1">
+                        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-11" id="carAmountOfLuggage">
+                        @Html.DisplayFor(m => m.Car.AmountOfLuggage)
+                    </div>
+                </div>
+
+                <div class="row" id="carTransmissionRow">
+                    <div class="col-md-1">
+                        <span class="glyphicon glyphicon-text-background" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-11" id="carTransmission">
+                        Automatic @Html.LabelFor(m => m.Car.Transmission)
+                    </div>
+                </div>
+                <div class="row" id="carAirConditioningRow">
+                    <div class="col-md-1">
+                        <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-11" id="carAirConditioning">
+                        @Html.LabelFor(m => m.Car.AirConditioning)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-1" id="carFuelConsumption">
+                        @Html.DisplayFor(m => m.Car.FuelConsumption)
+                    </div>
+                    <div class="col-md-10">
+                        km/liters
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <p style="float: left; color: rgb(158, 158, 150); padding-top: 15px; padding-left: 15px;">Car</p>
+                    <div class="col-md-9">
+                        @Html.DropDownList("Id", ViewBag.Cars as SelectList, htmlAttributes: new { @class = "form-control", @id = "carList" })
+                    </div>
+                </div>
+                <span id="totalPrice" style="font-size:35px;"> @ViewBag.TotalPrice</span>
+                <span id="currency">
+
+                @if (@ViewBag.TotalPrice != null)
+                {
+                   @ViewBag.Currency
+                }
+                </span>
+            </div>
+</div>
+
+            @Html.Partial("_OrderForm", Model)
+
+            <div class="form-group">
+                <div class="col-md-offset-9 col-md-3">
+                    <input type="reset" value="Cancel" class="btn btn-default"  onclick="window.location.href='/Orders/Index'"/>
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+        }
+
+@section scripts {
+            <script type="text/javascript">
+                var model = @Html.Raw(ViewBag.CarList);
+                var currentCar = @Html.Raw(ViewBag.CurrentCar);
+
+                $("#PickupDateTime").change(function () {
+                    var pickupDate = $('#PickupDateTime').val();
+                    var pickupLocation = $('#PickupLocation').val();
+
+                    $.ajax({
+                        url: "@Url.Action("Change", "Orders")",
+                        data: { 'location': pickupLocation, 'date': pickupDate },
+                        type: "post",
+                        cache: false,
+                        success: function (data) {
+                            $('#carList').find('option').remove().end()
+                            model = data;
+
+                            $.each(data, function (id, option) {
+                                $("#carList").append($('<option></option>').val(option.Id).html(option.Brand + " " + option.Model + " (№ " + option.CarNumber + ", Price: " + option.Price + ")"));
+                            });
+
+                            setValues(0);
+                            currentCar = model[0];
+                            setPrice();
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            alert("ERROR!!!!!!!!!!!");
+                        }
+                    });
+                });
+
+                $("#PickupLocation").change(function () {
+                    var pickupDate = $('#PickupDateTime').val();
+                    var pickupLocation = $('#PickupLocation').val();
+
+                    $.ajax({
+                        url: "@Url.Action("Change", "Orders")",
+                        data: { 'location': pickupLocation, 'date': pickupDate },
+                        type: "post",
+                        cache: false,
+                        success: function (data) {
+                            $('#carList').find('option').remove().end()
+                            model = data;
+
+                            $.each(data, function (id, option) {
+                                $("#carList").append($('<option></option>').val(option.Id).html(option.Brand + " " + option.Model + " (№ " + option.CarNumber + ", Price: " + option.Price + ")"));
+                            });
+
+                            setValues(0);
+                            currentCar = model[0];
+                            setPrice();
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            alert("ERROR!!!!!!!!!!!");
+                        }
+                    });
+                });
+
+                $("#carList").change(function () {
+                    var selectedId = $('#carList').find(":selected").val();
+                    var numberSelected;
+                    for (var i = 0; i < model.length; i++)
+                        if (model[i].Id == selectedId)
+                        {
+                            numberSelected = i;
+                            currentCar = model[i];
+                        }
+
+                    setValues(numberSelected);
+                    setPrice();
+                });
+
+                $(document).ready(function(){
+                    if (currentCar.Transmission==false)
+                    {
+                        $("#carTransmissionRow").hide();
+                    }
+                    else
+                    {
+                        $("#carTransmissionRow").show();
+                    }
+
+                    if (currentCar.AirConditioning==false)
+                    {
+                        $("#carAirConditioningRow").hide();
+                    }
+                    else{
+                        $("#carAirConditioningRow").show();
+                    }
+
+                    $("#carList").find('option').each(function(i,opt){
+                        if(opt.value==currentCar.Id)
+                            $(opt).prop('selected', true);
+                    })
+
+                    setPrice();
+                });
+
+                $("#ReturnDateTime").change(function () {
+                    setPrice();
+                });
+
+
+                var setPrice = function()
+                {
+                    var pickupDateTime = $("#PickupDateTime").val();
+                    var returnDateTime = $("#ReturnDateTime").val();
+
+                    var days = (new Date(returnDateTime) - new Date(pickupDateTime))/(24*3600*1000);
+
+                    var total=currentCar.Price*days;
+
+                    $("#totalPrice").text(total);
+                    $("#currency").text(" USD");
+                };
+
+                var setValues = function(number)
+                {
+                    $("#carBrandAndModel").html(model[number].Brand + " " + model[number].Model);
+                    $("#carPassengers").html(model[number].Passengers);
+                    $("#carAmountOfLuggage").html(model[number].AmountOfLuggage);
+                    if (model[number].Transmission==true)
+                    {
+                        $("#carTransmission").html(model[number].Transmission);
+                        $("#carTransmissionRow").show();
+                    }
+                    else{
+                        $("#carTransmissionRow").hide();
+                    }
+                    if (model[number].Transmission==true)
+                    {
+                        $("#carAirConditioning").html(model[number].AirConditioning);
+                        $("#carAirConditioningRow").show();
+                    }
+                    else{
+                        $("#carAirConditioningRow").hide();
+                    }
+                    $("#carFuelConsumption").html(model[number].FuelConsumption);
+                    $("#CarId").val(model[number].Id);
+                }
+
+</script>
+        }
+

@@ -1,0 +1,38 @@
+﻿@using Kendo.Mvc.UI;
+
+<link rel="stylesheet" href="~/Content/kendo/kendo.common.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.common-bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/kendo/kendo.material.min.css" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br/>
+<br />
+
+@Html.ActionLink("Create Role", "Create") | @Html.ActionLink("Managing Role of User", "ManageUserRoles") | @Html.ActionLink("Creation User", "CreateUser")
+<hr/>
+<br />
+
+@(Html.Kendo().Grid<CarRental.Models.ApplicationUser>()
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.UserName);
+        columns.Bound(p => p.PhoneNumber).Width(140);
+        columns.Bound(p => p.Email).Width(140);
+        columns.Bound(p => p.EmailConfirmed).Width(140);
+    })
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Scrollable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Model(model => model.Id(p => p.Id))
+        .Read(read => read.Action("GetUsers", "Administration"))
+    )
+)
+

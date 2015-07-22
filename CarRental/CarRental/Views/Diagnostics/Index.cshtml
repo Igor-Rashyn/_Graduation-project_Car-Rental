@@ -1,0 +1,56 @@
+﻿@model PagedList.IPagedList<CarRental.Models.Diagnostics>
+@using PagedList.Mvc
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br/>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Application №</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+            <th>Car №</th>
+            <th>Model</th>
+            <th>Total Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Order.ApplicationNumber)</td>
+                <td>@Html.DisplayFor(m => item.Order.FirstName)</td>
+                <td>@Html.DisplayFor(m => item.Order.LastName)</td>
+                <td>@Html.DisplayFor(m => item.Order.Email)</td>
+                <td>@Html.DisplayFor(m => item.Order.Phone)</td>
+                <td>@Html.DisplayFor(m => item.Car.CarNumber)</td>
+                <td>@Html.DisplayFor(m => item.Car.Brand) @Html.DisplayFor(m => item.Car.Model)</td>
+                <td>@Html.DisplayFor(m => item.Order.TotalPrice)</td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

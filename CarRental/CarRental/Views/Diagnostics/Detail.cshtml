@@ -1,0 +1,48 @@
+﻿@model CarRental.Models.Diagnostics
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br/>
+<br />
+<h4>Details</h4>
+<hr />
+
+<div class="form-horizontal">
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Order.ApplicationNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.Order.ApplicationNumber, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DetectedFailure, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.DetectedFailure, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.TextAreaFor(model => model.Description, htmlAttributes : new { @class = "form-control input-sm", disabled = "disabled", rows=6, cols=20 } )
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RepairCost, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.RepairCost, new { htmlAttributes = new { @class = "form-control input-sm", disabled = "disabled" } })
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div>
+    @Html.ActionLink("Back to list", "Index", "Diagnostics", new { @style = "font-size: 15px;" })
+</div>

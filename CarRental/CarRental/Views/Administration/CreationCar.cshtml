@@ -1,0 +1,130 @@
+﻿@model CarRental.Models.Car
+
+<link rel="stylesheet" href="~/Content/kendo/kendo.common-bootstrap.min.css" />
+<link rel="stylesheet" href="~/Content/jasny-bootstrap.css" />
+<script src="~/Scripts/jasny-bootstrap.js"></script>
+
+@{
+    ViewBag.Title = "CreationCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Creation Car</h2>
+
+   @using (Html.BeginForm("CreationCar", "Administration", FormMethod.Post, new { enctype = "multipart/form-data" }))
+   {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Brand, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.Brand, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.Brand, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Model, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.Model, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.Model, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.Location, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.Location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Passengers, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.Passengers, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.Passengers, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.AmountOfLuggage, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.AmountOfLuggage, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.AmountOfLuggage, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.AmountOfLuggageRu, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.AmountOfLuggageRu, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.AmountOfLuggageRu, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Transmission, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-1">
+                    @Html.CheckBoxFor(c => c.Transmission, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.FuelConsumption, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.FuelConsumption, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.FuelConsumption, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(c => c.Price, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                    @Html.ValidationMessageFor(c => c.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.AdditionInformation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.TextAreaFor(c => c.AdditionInformation, htmlAttributes : new { @class = "form-control input-sm", rows = "3" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.AdditionInformationRu, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    @Html.TextAreaFor(c => c.AdditionInformationRu, htmlAttributes: new { @class = "form-control input-sm", rows = "3" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.AirConditioning, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-1">
+                    @Html.CheckBoxFor(c => c.AirConditioning, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Picture, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="fileinput fileinput-new col-md-9" data-provides="fileinput">
+                    <span class="btn btn-info btn-sm btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="image"></span>
+                    <span class="fileinput-filename"></span>
+                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-9 col-md-3">
+                    <input type="submit" value="Сохранить" class="btn btn-primary" />
+                    @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+                </div>
+            </div>
+
+        </div>
+    }

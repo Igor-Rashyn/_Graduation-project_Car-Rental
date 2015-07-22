@@ -1,0 +1,56 @@
+﻿@using CarRental.Models
+@using CarRental.WebUI.Models
+@model IListViewModel<Car>
+
+    <div class="sortingBlock">
+        <p>
+            Sort Vehicle By:
+            @Ajax.ActionLink("Price", "Index", "Cars", new { sortOrder = Session["PriceSortParm"] as string, currentFilter = Session["CurrentFilter"] as string }, new AjaxOptions { UpdateTargetId = "tabledata" })
+            | @Ajax.ActionLink("Size", "Index", "Cars", new { sortOrder = Session["SizeSortParm"] as string, currentFilter = Session["CurrentFilter"] as string }, new AjaxOptions { UpdateTargetId = "tabledata" })
+            | @Ajax.ActionLink("Consumption", "Index", "Cars", new { sortOrder = Session["ConsumptionSortParm"] as string, currentFilter = Session["CurrentFilter"] as string }, new AjaxOptions { UpdateTargetId = "tabledata" })
+        </p>
+    </div>
+
+    @foreach (Car item in Model.Model)
+    {
+        <div class="col-md-12 signature">
+            <h4>@Html.DisplayFor(m => item.Brand) @Html.DisplayFor(m => item.Model)</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-thumbnail" width="220" src="@Url.Action("RenderImage", "Administration", new { item.Id })" />
+            </div>
+            <div class="col-md-4">
+                <h4>@Html.DisplayFor(m => item.Brand) @Html.DisplayFor(m => item.Model)</h4>
+                <p> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> @Html.DisplayFor(m => item.Passengers) @Html.LabelFor(m => item.Passengers)</p>
+                <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> @Html.DisplayFor(m => item.AmountOfLuggage)</p>
+                @if (item.Transmission == true)
+                {
+                    <p><span class="glyphicon glyphicon-text-background" aria-hidden="true"> </span>Automatic @Html.LabelFor(m => item.Transmission)</p>
+                }
+                @if (@item.AirConditioning == true)
+                {
+                    <p><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> @Html.LabelFor(m => item.AirConditioning)</p>
+                }
+                <p><span class="glyphicon glyphicon-tint" aria-hidden="true"></span> @Html.DisplayFor(m => item.FuelConsumption) km/liters</p>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <h3>@Html.DisplayFor(m => item.Price) USD</h3>
+                @using (Html.BeginForm("Order", "Cars"))
+                {
+                    <div>
+                        @Html.HiddenFor(x => item.Id)
+                        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                        <input type="submit" class="btn btn-success" value="Order" />
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-md-12">
+            <hr />
+        </div>
+    }
+    <div>
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { Page = x, sortOrder=Session["CurrentSort"], currentFilter=Session["CurrentFilter"] })) 
+    </div>

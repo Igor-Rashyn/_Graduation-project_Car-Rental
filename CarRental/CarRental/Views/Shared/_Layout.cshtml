@@ -1,0 +1,93 @@
+﻿@using CarRental.HtmlHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/kendo/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Car rental", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="@Html.IsSelected(controller: "Home", action: "Index")">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="@Html.IsSelected(controller: "Cars", action: "Index")">@Html.ActionLink("Cars", "Index", "Cars")</li>
+                    <li class="@Html.IsSelected(action: "Contact")">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin") || User.IsInRole("CarFleet"))
+                        {
+                            <li class="@Html.IsSelected(controller: "Orders", action: "Index")">@Html.ActionLink("Orders", "Index", "Orders")</li>
+                        }
+                        if (User.IsInRole("Admin") || User.IsInRole("ServiceCenter"))
+                        { 
+                            <li class="@Html.IsSelected(controller: "Diagnostics", action: "Index")"> @Html.ActionLink("Diagnostics", "Index", "Diagnostics")</li>        
+                        }
+                        if (User.IsInRole("Admin"))
+                        {
+                            @*<li class="@Html.IsSelected(controller: "Administration", action: "Index")">@Html.ActionLink("Administration", "Index", "Administration")</li>*@
+
+                            <li class="dropdown @Html.IsSelected(controller: "Administration", action: "Index")">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administration <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("Managing Roles and Users", "Index", "Administration")</li>
+                                    <li>@Html.ActionLink("Managing the list of cars", "ListOfCars", "Administration")</li>
+                                    <li><a href="#">Managing the list of news</a></li>
+                                </ul>
+                            </li>
+
+
+
+                        }
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <br/>
+            <div>
+                 &copy; @DateTime.Now.Year - Car rental
+                 <div class="pull-right">Developer: <a href="mailto:igor.rashyn@gmail.com">igor.rashyn@gmail.com</a> </div>
+            </div>
+
+            <address>
+                <strong>Twitter, Inc.</strong><br>
+                795 Folsom Ave, Suite 600<br>
+                San Francisco, CA 94107<br>
+                <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+
+            <address>
+                <strong>Full Name</strong><br>
+                <a href="mailto:#">first.last@example.com</a>
+            </address>
+        </footer>
+    </div>
+
+   @* @Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/datetime")
+   @* @Scripts.Render("~/bundles/kendo")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>
