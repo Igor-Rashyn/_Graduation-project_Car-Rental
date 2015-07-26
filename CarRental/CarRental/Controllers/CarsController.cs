@@ -4,14 +4,18 @@ using System.Data;
 using System.Data.Entity.Infrastructure;
 using System.Globalization;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
+using CarRental.Filters;
 using CarRental.Models;
 using CarRental.Repositories;
 using CarRental.WebUI.Models;
 
 namespace CarRental.Controllers
 {
+    [Culture]
     public class CarsController : Controller
     {
 
@@ -151,8 +155,8 @@ namespace CarRental.Controllers
 
             }
 
-            DateTime dtPickup = DateTime.MinValue; // НУЖНО ЗАМЕНИТЬ БД УСТАНОВИТЬ ЧТОБЫ ДАТА МОГЛА БЫТЬ NULL!!!!!!!!!!!!
-            DateTime dtReturn= DateTime.MinValue;
+            DateTime dtPickup = DateTime.Now; // НУЖНО ЗАМЕНИТЬ БД УСТАНОВИТЬ ЧТОБЫ ДАТА МОГЛА БЫТЬ NULL!!!!!!!!!!!!
+            DateTime dtReturn = DateTime.Now;
 
             if (!String.IsNullOrEmpty(Session["PickupDateOriginal"] as string))
             {
@@ -170,11 +174,11 @@ namespace CarRental.Controllers
             {
                 Car = car,
                 CarId = newGuid,
-                PickupDateTime= dtPickup,
+                PickupDateTime = dtPickup,
                 PickupLocation = Session["PickupLocation"] as string, 
                 ReturnLocation = Session["DifferentLocation"] as bool?==true? Session["ReturnLocation"] as string : Session["PickupLocation"] as string, 
                 ReturnDateTime = dtReturn
-            };
+        };
 
             if (!String.IsNullOrEmpty((Session["PickupDateOriginal"] as string)) & !String.IsNullOrEmpty((Session["ReturnDateOriginal"] as string)))
             {
@@ -191,7 +195,7 @@ namespace CarRental.Controllers
         // POST: Cars/Order/Create
        [HttpPost]
        [ValidateAntiForgeryToken]
-        public ActionResult Create (Order order) //  ДОБАВИТЬ ОТПРАВКу ПИСЬМА НА УКАЗАННЫЙ ЯЩИК С НОМЕРОМ ЗАКАЗА !!!!!!!!!!!!!!
+        public ActionResult Create (Order order)
         {
             try
             {
@@ -201,11 +205,12 @@ namespace CarRental.Controllers
                     car.Status = "Booked";
                     car.StatusRu = "Забронировано";
 
-
                     order.DateOfChange = DateTime.Now;
                     order.TotalPrice = ((TimeSpan)(order.ReturnDateTime - order.PickupDateTime)).Days * car.Price;
                     order.CarId = car.Id;
-                    
+
+                    //SendMail(Convert.ToString(order.ApplicationNumber), order.Email, order.FirstName+" "+order.LastName);
+
                     OrderRepository.Create(order);
                     OrderRepository.Save();
                     CarRepository.Update(car);
@@ -219,6 +224,44 @@ namespace CarRental.Controllers
             }
             return View(order);
         }
+
+
+        private void SendMail(string number, string mail, string name)
+        {
+            MailMessage message = new MailMessage();
+            message.To.Add(new MailAddress(mail));
+            message.From = new MailAddress("nimbik@gmail.com");
+            message.Subject = "Car renteal. Your order number: " + number;
+            message.Body = @"Hello  " + name + "\n"
+                        + "This is the number of your order. Please use this to get the car. " + "\n"
+                        + "Number: " + number;
+            message.IsBodyHtml = false;
+
+            SmtpClient client = new SmtpClient();
+            try
+            {
+                var credential = new NetworkCredential {
+                    UserName = "test@gmail.com",
+                    Password = "test"
+                };
+                client.Credentials = credential;
+                client.Host = "smtp.gmail.com";
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.Send(message);
+                Email email = new Email {
+                    Body = message.Body,
+                    From= "nimbik@gmail.com",
+                    To =mail,
+                    Subject = message.Subject
+                };
+            }
+
+            catch (Exception ex)
+            {
+            }
+        }
+
 
 
        

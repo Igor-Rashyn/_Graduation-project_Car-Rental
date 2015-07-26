@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using CarRental.Filters;
 using CarRental.Models;
 using CarRental.Repositories;
 using Newtonsoft.Json;
@@ -12,6 +13,7 @@ using PagedList;
 
 namespace CarRental.Controllers
 {
+    [Culture]
     public class OrdersController : Controller
     {
 

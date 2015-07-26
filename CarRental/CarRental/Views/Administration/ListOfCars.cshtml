@@ -10,12 +10,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>List Of Cars</h2>
+<h2>@ResAdministration.Administration_ListOfCars.ListOfCars</h2>
 
 <br />
 <br />
 
-@Html.ActionLink("Create Car", "CreationCar")
+@Html.ActionLink(ResAdministration.Administration_ListOfCars.CreateCar, "CreationCar")
 <hr />
 <br />
 
@@ -25,7 +25,7 @@
     {
         columns.Bound(p => p.Picture.Id)
                        .ClientTemplate("<img src='" + @Url.Action("RenderImage", "Administration", new { Id = "#=Id#" }, @Request.Url.Scheme) + "' height='100' width='150' />")
-                       .Title("Picture").Width(160).Locked(true).Lockable(false);
+                       .Title(ResAdministration.Administration_ListOfCars.Picture).Width(160).Locked(true).Lockable(false);
         columns.Bound(p => p.Brand).Width(120).Locked(true).Lockable(false);
         columns.Bound(p => p.Model).Width(120).Locked(true).Lockable(false);
         columns.Bound(p => p.Status).Width(120).Locked(true).Lockable(false);
@@ -37,7 +37,7 @@
         columns.Bound(p => p.AdditionInformation).Width(150);
         columns.Bound(p => p.AirConditioning).Width(100);
         columns.Bound(p => p.Transmission).Width(100);
-        columns.Template(x => null).ClientTemplate(Html.ActionLink("Edit", "EditCar", new { Id = "GUID" }, htmlAttributes: new { @class = "k-button k-button-icontext" }).ToHtmlString().Replace("GUID", "#=Id#")).Width(172);
+        columns.Template(x => null).ClientTemplate(Html.ActionLink(ResAdministration.Administration_ListOfCars.Edit, "EditCar", new { Id = "GUID" }, htmlAttributes: new { @class = "k-button k-button-icontext" }).ToHtmlString().Replace("GUID", "#=Id#")).Width(172);
         columns.Command(command => command.Destroy()).Width(172);
     })
     .Pageable(pageable => pageable

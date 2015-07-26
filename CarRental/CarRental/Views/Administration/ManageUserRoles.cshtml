@@ -4,40 +4,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Manage User Roles</h2>
-@Html.ActionLink("Back", "Index") | @Html.ActionLink("Create", "Create")
+<h2>@ResAdministration.Administration_ManageUserRoles.ManageUserRoles</h2>
+@Html.ActionLink(ResAdministration.Administration_ManageUserRoles.Back, "Index") | @Html.ActionLink(ResAdministration.Administration_ManageUserRoles.Create, "Create")
 <hr />
 
-<h2>Role Add to User</h2>
+<h2>@ResAdministration.Administration_ManageUserRoles.RoleAddToUser</h2>
 
 @using (Html.BeginForm("RoleAddToUser", "Administration"))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
     <p>
-        Username : @Html.TextBox("UserName")
-        Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
-
+        @ResAdministration.Administration_ManageUserRoles.UserName : @Html.TextBox("UserName")
+        @ResAdministration.Administration_ManageUserRoles.RoleName : @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, ResAdministration.Administration_ManageUserRoles.SelectMsg)
     </p>
-
-    <input type="submit" value="Save" />
+    <input type="submit" value='@ResAdministration.Administration_ManageUserRoles.Save' />
 }
 <hr />
-<h3>Get Roles for a User</h3>
+<h3>@ResAdministration.Administration_ManageUserRoles.GetRolesForUser</h3>
 @using (Html.BeginForm("GetRoles", "Administration"))
 {
     @Html.AntiForgeryToken()
     <p>
-        Username : @Html.TextBox("UserName")
-        <input type="submit" value="Get Roles for this User" />
+        @ResAdministration.Administration_ManageUserRoles.UserName : @Html.TextBox("UserName")
+        <input type="submit" value='@ResAdministration.Administration_ManageUserRoles.GetRolesForThisUser' />
     </p>
 }
 
 @if (ViewBag.RolesForThisUser != null)
 {
     <div style="background-color:yellow;">
-        <h3>Roles for this user </h3>
+        <h3>@ResAdministration.Administration_ManageUserRoles.RolesForThisUser</h3>
         <ol>
             @foreach (string s in ViewBag.RolesForThisUser)
             {
@@ -48,18 +45,17 @@
 }
 
 <hr />
-<h3>Delete A User from a Role</h3>
+<h3>@ResAdministration.Administration_ManageUserRoles.DeleteUserFromRole</h3>
 
 @using (Html.BeginForm("DeleteRoleForUser", "Administration"))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
     <p>
-        Username : @Html.TextBox("UserName")
-        Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+        @ResAdministration.Administration_ManageUserRoles.UserName : @Html.TextBox("UserName")
+        @ResAdministration.Administration_ManageUserRoles.RoleName : @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
 
     </p>
 
-    <input type="submit" value="Delete this user from Role" />
+    <input type="submit" value='@ResAdministration.Administration_ManageUserRoles.DeleteThisUserFromRole' />
 }

@@ -1,45 +1,46 @@
-﻿@{
+﻿
+
+@{
     ViewBag.Title = "Home Page";
 }
 <br />
 <!-- Search form & Slider -->
 <div class="row">
     <!-- Search form -->
-
     <div class="col-md-5">
         <div class="well bs-component searchform">
 @using(Html.BeginForm("Search", "Home", new { nameWhereParam = "Search" }, FormMethod.Get, new { @class = "form-horizontal" }))
 {
                         @Html.ValidationSummary(true)
                                     <fieldset>
-                                        <legend>Book Now</legend>
+                                        <legend> @Resources.Index.BookNow</legend>
                                             <div class="form-group">
-                            <label for="inputPickupLocation" class="col-lg-4 control-label">Pickup Location</label>
+                            <label for="inputPickupLocation" class="col-lg-4 control-label">@Resources.Index.PickupLocation</label>
                             <div class="col-lg-8">
-                                <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder="Pickup Location">
+                                <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder='@Resources.Index.PickupLocation'>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" id="checkboxDifferentLocation" name="checkboxDifferentLocation"> Return car to a different location
+                                        <input type="checkbox" id="checkboxDifferentLocation" name="checkboxDifferentLocation"> @Resources.Index.DifferentLocation
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group hidden" id="formReturnLocation">
-                            <label for="inputReturnLocation" class="col-lg-4 control-label">Return Location</label>
+                            <label for="inputReturnLocation" class="col-lg-4 control-label">@Resources.Index.ReturnLocation</label>
                             <div class="col-lg-8">
-                                <input type="text" class="form-control" id="inputReturnLocation" name="inputReturnLocation" placeholder="Return Location">
+                                <input type="text" class="form-control" id="inputReturnLocation" name="inputReturnLocation" placeholder='@Resources.Index.ReturnLocation'>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputPickupDate" class="col-lg-4 control-label">Pickup Date & Time</label>
+                            <label for="inputPickupDate" class="col-lg-4 control-label">@Resources.Index.PickupDate</label>
                             <div class='col-lg-8'>
                                 <input type='text' class="form-control" id='inputPickupDate' name="inputPickupDate" />
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputReturnDate" class="col-lg-4 control-label">Return Date & Time</label>
+                            <label for="inputReturnDate" class="col-lg-4 control-label">@Resources.Index.ReturnDate</label>
                             <div class='col-lg-8'>
                                 <input type='text' class="form-control" id='inputReturnDate' name="inputReturnDate" />
                             </div>
@@ -47,7 +48,7 @@
 
                         <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">
-                                <button type="submit" class="btn btn-primary pull-right" value="Search">Search</button>
+                                <button type="submit" class="btn btn-primary pull-right" value="Search">@Resources.Index.Search</button>
                             </div>
                         </div>
                        
@@ -88,16 +89,6 @@
                 </div>
 
             </div>
-
-            <!-- Controls -->
-            @*<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>*@
         </div>
         </div>
 

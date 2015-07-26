@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CarRental.Filters;
 using CarRental.Models;
 using CarRental.Repositories;
 using PagedList;
 
 namespace CarRental.Controllers
 {
+    [Culture]
     public class DiagnosticsController : Controller
     {
         IRepository<Order> OrderRepository;

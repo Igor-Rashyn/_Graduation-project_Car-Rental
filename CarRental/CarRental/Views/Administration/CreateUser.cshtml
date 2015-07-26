@@ -9,7 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Creation User</h2>
+<h2>@ResAdministration.Administration_CreateUser.CreationUser</h2>
 @Html.ActionLink("Back", "Index")
 <hr/>
 @using (Html.BeginForm())
@@ -20,40 +20,40 @@
     <div class="demo-section k-header">
         <div id="tickets">
             <form class="k-content" id="ticketsForm">
-                <h3>Book Tickets</h3>
+                <h3>@ResAdministration.Administration_CreateUser.BookTickets</h3>
                 <ul>
                     <li>
-                        <label for="UserName" class="required">User Name</label>
+                        <label for="UserName" class="required">@ResAdministration.Administration_CreateUser.UserName</label>
                         @(Html.Kendo().TextBox()
                               .Name("UserName")
-                              .HtmlAttributes(new { placeholder = "Full name", required = "required", validationmessage = "Enter {0}", style = "width:200px" })
+                              .HtmlAttributes(new { placeholder = ResAdministration.Administration_CreateUser.FullName, required = "required", validationmessage = "Enter {0}", style = "width:200px" })
                         )
                     </li>
                     <li>
-                        <label for="Email" class="required">Email</label>
+                        <label for="Email" class="required">@ResAdministration.Administration_CreateUser.Email</label>
                         @(Html.Kendo().TextBox()
                               .Name("Email")
-                              .HtmlAttributes(new { placeholder = "e.g. myname@example.net", required = "required", type = "email", data_email_msg = "Email format is not valid", style = "width: 200px;" })
+                              .HtmlAttributes(new { placeholder = "e.g. myname@example.net", required = "required", type = "email", data_email_msg = ResAdministration.Administration_CreateUser.EmailFormat, style = "width: 200px;" })
                         )
                     </li>
                     <li>
-                        <label for="Phone" class="required">Phone</label>
+                        <label for="Phone" class="required">@ResAdministration.Administration_CreateUser.Phone</label>
                         @(Html.Kendo().TextBox()
                               .Name("Phone")
-                              .HtmlAttributes(new { placeholder = "Enter a ten digit number", pattern = "\\d{10}", required = "required", type = "tel", validationmessage = "Enter at least ten digits", style = "width: 200px;" })
+                              .HtmlAttributes(new { placeholder = ResAdministration.Administration_CreateUser.PhoneFormat, pattern = "\\d{10}", required = "required", type = "tel", validationmessage = ResAdministration.Administration_CreateUser.PhoneFormatMsg, style = "width: 200px;" })
                         )
                     </li>
 
                     <li>
-                        <label for="Password" class="required">Password</label>
+                        <label for="Password" class="required">@ResAdministration.Administration_CreateUser.Password</label>
                         @(Html.Kendo().TextBox()
                               .Name("Password")
-                              .HtmlAttributes(new { placeholder = "Password", required = "required", type = "password", validationmessage = "Enter password", style = "width: 200px;" })
+                              .HtmlAttributes(new { placeholder = @ResAdministration.Administration_CreateUser.Password, required = "required", type = "password", validationmessage = ResAdministration.Administration_CreateUser.PasswordMsg, style = "width: 200px;" })
                         )
                     </li>
 
                     <li class="confirm">
-                        <button class="k-button k-primary" type="submit">Submit</button>
+                        <button class="k-button k-primary" type="submit">@ResAdministration.Administration_CreateUser.Submit</button>
                     </li>
                     <li class="status"></li>
                 </ul>
@@ -62,7 +62,9 @@
     </div>
    }
 
-
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 <style>
     .k-textbox {
         width: 11.8em;
@@ -85,7 +87,6 @@
 
     #tickets {
         width: 400px;
-        /*background: url('../content/web/validator/tickets.png') transparent no-repeat 30px 50%;*/
         background-color: #FFFFFF;
     }
 

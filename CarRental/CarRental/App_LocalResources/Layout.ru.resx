@@ -129,11 +129,23 @@
   <data name="Diagnostics" xml:space="preserve">
     <value>Центр диагностики</value>
   </data>
+  <data name="en" xml:space="preserve">
+    <value>анг</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Здраствуйте</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Главная</value>
   </data>
   <data name="IgorRashyn" xml:space="preserve">
     <value>Игорь Рашин</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Выйти</value>
   </data>
   <data name="ManagingCars" xml:space="preserve">
     <value>Управление списком машин</value>
@@ -149,5 +161,11 @@
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Телефон</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="ru" xml:space="preserve">
+    <value>ру</value>
   </data>
 </root>

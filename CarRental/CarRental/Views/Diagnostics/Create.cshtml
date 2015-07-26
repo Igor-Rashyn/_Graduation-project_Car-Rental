@@ -17,7 +17,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Diagnostics of car</h4>
+        <h4>@ResDiagnostics.Diagnostics_Create.DiagnosticsOfCar</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -48,7 +48,6 @@
             </div>
         </div>
 
-
         <div class="form-group">
             @Html.LabelFor(model => model.DetectedFailure, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -73,17 +72,20 @@
             </div>
         </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value='@ResDiagnostics.Diagnostics_Create.Create' class="btn btn-default" />
             </div>
+        </div>
 </div>
 }
 
 <br/>
 
 <div>
-    @Html.ActionLink("Back to list", "Index","Diagnostics", new { @style = "font-size: 15px; text-decoration: underline;" })
+    @Html.ActionLink(ResDiagnostics.Diagnostics_Create.BackToList, "Index","Diagnostics", new { @style = "font-size: 15px; text-decoration: underline;" })
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 

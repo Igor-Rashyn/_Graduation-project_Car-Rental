@@ -11,49 +11,46 @@
 <div>
     <div class="col-md-4">
         <div class="well-new bs-component for">
-
-            @*@using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "form-horizontal" }))*@
-
             @using (Ajax.BeginForm("SortView", "Cars", null, new AjaxOptions { UpdateTargetId = "tabledata", HttpMethod="GET" }, new { @class = "form-horizontal" } ))
             {
                 @Html.ValidationSummary(true)
                 <fieldset>
                     <legend>Search</legend>
                     <div class="form-group">
-                        <label for="inputPickupLocation" class="col-lg-4 control-label">Pickup Location</label>
+                        <label for="inputPickupLocation" class="col-lg-4 control-label">@Resources.Home_Cars.PickupLocation</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder="Pickup Location">
+                            <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder='@Resources.Home_Cars.PickupLocation'>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" id="checkboxDifferentLocation" name="checkboxDifferentLocation"> Return car to a different location
+                                    <input type="checkbox" id="checkboxDifferentLocation" name="checkboxDifferentLocation"> @Resources.Home_Cars.DifferentLocation
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group hidden" id="formReturnLocation">
-                        <label for="inputReturnLocation" class="col-lg-4 control-label">Return Location</label>
+                        <label for="inputReturnLocation" class="col-lg-4 control-label">@Resources.Home_Cars.DifferentLocation</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control" id="inputReturnLocation" name="inputReturnLocation" placeholder="Return Location">
+                            <input type="text" class="form-control" id="inputReturnLocation" name="inputReturnLocation" placeholder='@Resources.Home_Cars.DifferentLocation'>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPickupDate" class="col-lg-4 control-label">Pickup Date & Time</label>
+                        <label for="inputPickupDate" class="col-lg-4 control-label">@Resources.Home_Cars.PickupDate</label>
                         <div class='col-lg-8'>
-                            <input type='text' class="form-control" id='inputPickupDate' name="inputPickupDate" placeholder="Pickup Date & Time">
+                            <input type='text' class="form-control" id='inputPickupDate' name="inputPickupDate" placeholder='@Resources.Home_Cars.PickupDate'>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputReturnDate" class="col-lg-4 control-label">Return Date & Time</label>
+                        <label for="inputReturnDate" class="col-lg-4 control-label">@Resources.Home_Cars.ReturnDate</label>
                         <div class='col-lg-8'>
-                            <input type='text' class="form-control" id='inputReturnDate' name="inputReturnDate" placeholder="Return Date & Time">
+                            <input type='text' class="form-control" id='inputReturnDate' name="inputReturnDate" placeholder='@Resources.Home_Cars.ReturnDate'>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
-                            <button type="submit" class="btn btn-primary pull-right" value="Search">Search</button>
+                            <button type="submit" class="btn btn-primary pull-right" value="Search">@Resources.Home_Cars.Search</button>
                         </div>
                     </div>
 
@@ -65,10 +62,10 @@
 
     <div class="col-md-8">
         <div class="sortingBlock">
-            <p> Sort Vehicle By: 
-                @Ajax.ActionLink("Price", "SortView", "Cars", new {sortBy = "Price" }, new AjaxOptions {UpdateTargetId= "tabledata" })
-                 | @Ajax.ActionLink("Size", "SortView", "Cars", new {sortBy = "Size" }, new AjaxOptions { UpdateTargetId = "tabledata" })
-                | @Ajax.ActionLink("Consumption", "SortView", "Cars", new {sortBy = "Consumption" }, new AjaxOptions { UpdateTargetId = "tabledata"})
+            <p> @Resources.Home_Cars.SortVehicle
+                @Ajax.ActionLink(@Resources.Home_Cars.Price, "SortView", "Cars", new {sortBy = "Price" }, new AjaxOptions {UpdateTargetId= "tabledata" })
+                 | @Ajax.ActionLink(@Resources.Home_Cars.Size, "SortView", "Cars", new {sortBy = "Size" }, new AjaxOptions { UpdateTargetId = "tabledata" })
+                | @Ajax.ActionLink(@Resources.Home_Cars.Consumption, "SortView", "Cars", new {sortBy = "Consumption" }, new AjaxOptions { UpdateTargetId = "tabledata"})
             </p>
         </div>
 
@@ -84,6 +81,7 @@
 </div>
 
 @section scripts {
+@Scripts.Render("~/bundles/jqueryval")
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script type="text/javascript">
         $(function () {

@@ -15,41 +15,41 @@
             {
                 @Html.ValidationSummary(true)
                 <fieldset>
-                    <legend>Search</legend>
+                    <legend>@ResCars.Cars_Index.Search</legend>
                     <div class="form-group">
-                        <label for="inputPickupLocation" class="col-lg-4 control-label">Pickup Location</label>
+                        <label for="inputPickupLocation" class="col-lg-4 control-label">@ResCars.Cars_Index.PickupLocation</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder="Pickup Location">
+                            <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder='@ResCars.Cars_Index.PickupLocation'>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" id="checkboxDifferentLocation" name="checkboxDifferentLocation"> Return car to a different location
+                                    <input type="checkbox" id="checkboxDifferentLocation" name="checkboxDifferentLocation"> @ResCars.Cars_Index.DifferentLocation
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group hidden" id="formReturnLocation">
-                        <label for="inputReturnLocation" class="col-lg-4 control-label">Return Location</label>
+                        <label for="inputReturnLocation" class="col-lg-4 control-label">@ResCars.Cars_Index.ReturnLocation</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control" id="inputReturnLocation" name="inputReturnLocation" placeholder="Return Location">
+                            <input type="text" class="form-control" id="inputReturnLocation" name="inputReturnLocation" placeholder='@ResCars.Cars_Index.ReturnLocation'>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPickupDate" class="col-lg-4 control-label">Pickup Date & Time</label>
+                        <label for="inputPickupDate" class="col-lg-4 control-label">@ResCars.Cars_Index.PickupDate</label>
                         <div class='col-lg-8'>
-                            <input type='text' class="form-control" id='inputPickupDate' name="inputPickupDate" placeholder="Pickup Date & Time">
+                            <input type='text' class="form-control" id='inputPickupDate' name="inputPickupDate" placeholder='@ResCars.Cars_Index.PickupDate'>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputReturnDate" class="col-lg-4 control-label">Return Date & Time</label>
+                        <label for="inputReturnDate" class="col-lg-4 control-label">@ResCars.Cars_Index.ReturnDate</label>
                         <div class='col-lg-8'>
-                            <input type='text' class="form-control" id='inputReturnDate' name="inputReturnDate" placeholder="Return Date & Time">
+                            <input type='text' class="form-control" id='inputReturnDate' name="inputReturnDate" placeholder='@ResCars.Cars_Index.ReturnDate'>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
-                            <button type="submit" class="btn btn-primary pull-right" value="Search">Search</button>
+                            <button type="submit" class="btn btn-primary pull-right" value="Search">@ResCars.Cars_Index.Search</button>
                         </div>
                     </div>
 

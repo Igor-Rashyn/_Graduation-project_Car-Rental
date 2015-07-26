@@ -4,8 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create Role</h2>
-@Html.ActionLink("Back", "Index") | @Html.ActionLink("Manage", "ManageUserRoles")
+<h2>@ResAdministration.Administration_Create.CreateRole</h2>
+@Html.ActionLink(ResAdministration.Administration_Create.Back, "Index") | @Html.ActionLink(ResAdministration.Administration_Create.Manage, "ManageUserRoles")
 <hr />
 @using (Html.BeginForm())
 {
@@ -13,7 +13,7 @@
     @Html.ValidationSummary(true)
 
     <div>
-        Role name
+        @ResAdministration.Administration_Create.RoleName
     </div>
     <p>
         @Html.TextBox("RoleName")
@@ -21,15 +21,18 @@
     <input type="submit" value="Save" />
 }
 
-<h2>List of Roles</h2>
+<h2>@ResAdministration.Administration_Create.ListOfRoles</h2>
 <hr />
 <div>
     @foreach (var role in Model)
     {
         <p>
             <strong>@role.Name | </strong>
-            <span onclick="return confirm('Are you sure to delete?')"><a href="/Administration/Delete?RoleName=@role.Name" class="delLink" style="color:red;">Delete</a></span> |
-            @Html.ActionLink("Edit", "Edit", new { roleName = @role.Name })
+            <span onclick="return confirm('Are you sure to delete?')"><a href="/Administration/Delete?RoleName=@role.Name" class="delLink" style="color:red;">@ResAdministration.Administration_Create.Delete</a></span> |
+            @Html.ActionLink(ResAdministration.Administration_Create.Edit, "Edit", new { roleName = @role.Name })
         </p>
     }
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

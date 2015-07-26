@@ -14,7 +14,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
      <div class="form-group row">
             <div class="col-md-4">
-                <img src="~/Content/Images/Home/slide-1.jpg" style="width:220px">
+                <img class="img-thumbnail" width="250" src="@Url.Action("RenderImage", "Administration", new { Model.Car.Id })" />
                 @Html.HiddenFor(m => m.CarId, new { @id = "CarId" })
                 @Html.HiddenFor(m => m.Id)
             </div>
@@ -43,10 +43,10 @@
 
                 <div class="row" id="carTransmissionRow">
                     <div class="col-md-1">
-                        <span class="glyphicon glyphicon-text-background" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                     </div>
                     <div class="col-md-11" id="carTransmission">
-                        Automatic @Html.LabelFor(m => m.Car.Transmission)
+                        @ResOrders.Orders_Edit.Automatic @Html.LabelFor(m => m.Car.Transmission)
                     </div>
                 </div>
                 <div class="row" id="carAirConditioningRow">
@@ -65,14 +65,14 @@
                         @Html.DisplayFor(m => m.Car.FuelConsumption)
                     </div>
                     <div class="col-md-10">
-                        km/liters
+                        @ResOrders.Orders_Edit.km
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <p style="float: left; color: rgb(158, 158, 150); padding-top: 15px; padding-left: 15px;">Car</p>
+                    <p style="float: left; color: rgb(158, 158, 150); padding-top: 15px; padding-left: 15px;">@ResOrders.Orders_Edit.Car</p>
                     <div class="col-md-9">
                         @Html.DropDownList("Id", ViewBag.Cars as SelectList, htmlAttributes: new { @class = "form-control", @id = "carList" })
                     </div>
@@ -92,19 +92,20 @@
 
             <div class="form-group">
                 <div class="col-md-offset-9 col-md-3">
-                    <input type="reset" value="Cancel" class="btn btn-default"  onclick="window.location.href='/Orders/Index'"/>
-                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <input type="reset" value='@ResOrders.Orders_Edit.Cancel' class="btn btn-default"  onclick="window.location.href='/Orders/Index'"/>
+                    <input type="submit" value='@ResOrders.Orders_Edit.Save' class="btn btn-primary" />
                 </div>
             </div>
         </div>
         }
 
 @section scripts {
+@Scripts.Render("~/bundles/jqueryval")
             <script type="text/javascript">
                 var model = @Html.Raw(ViewBag.CarList);
                 var currentCar = @Html.Raw(ViewBag.CurrentCar);
 
-                $("#PickupDateTime").change(function () {
+                $("#PickupDateTime, #PickupLocation").change(function () {
                     var pickupDate = $('#PickupDateTime').val();
                     var pickupLocation = $('#PickupLocation').val();
 
@@ -131,7 +132,7 @@
                     });
                 });
 
-                $("#PickupLocation").change(function () {
+                @*$("#PickupLocation").change(function () {
                     var pickupDate = $('#PickupDateTime').val();
                     var pickupLocation = $('#PickupLocation').val();
 
@@ -156,7 +157,7 @@
                             alert("ERROR!!!!!!!!!!!");
                         }
                     });
-                });
+                });*@
 
                 $("#carList").change(function () {
                     var selectedId = $('#carList').find(":selected").val();

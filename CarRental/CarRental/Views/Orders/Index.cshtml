@@ -12,9 +12,9 @@
 @using (Html.BeginForm("Index", "Orders", FormMethod.Get))
 {
     <div class="form-inline">
-            @Html.Label("Find by number:", new {@for= "inputSearch", @class= "control-label" })
-            @Html.TextBox("SearchString", null, new { @class = "form-control input-sm", @id="inputSearch", @placeholder="Search...." })
-            <input type="submit" value="Search" class="btn btn-default btn-sm">
+            @Html.Label(ResOrders.Orders_Index.FindByNumber, new {@for= "inputSearch", @class= "control-label" })
+            @Html.TextBox("SearchString", null, new { @class = "form-control input-sm", @id="inputSearch", @placeholder=ResOrders.Orders_Index.Search})
+            <input type="submit" value='@ResOrders.Orders_Index.SearchBut' class="btn btn-default btn-sm">
     </div>
 }
 
@@ -22,13 +22,13 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Number</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>E-mail</th>
-                    <th>Phone</th>
-                    <th>Brand</th>
-                    <th>Model</th>
+                    <th>@ResOrders.Orders_Index.Number</th>
+                    <th>@ResOrders.Orders_Index.FirstName</th>
+                    <th>@ResOrders.Orders_Index.LastName</th>
+                    <th>@ResOrders.Orders_Index.Mail</th>
+                    <th>@ResOrders.Orders_Index.Phone</th>
+                    <th>@ResOrders.Orders_Index.Brand</th>
+                    <th>@ResOrders.Orders_Index.Model</th>
                     <th></th>
                 </tr>
             </thead>
@@ -44,9 +44,9 @@
                         <td>@Html.DisplayFor(m => item.Car.Brand)</td>
                         <td>@Html.DisplayFor(m => item.Car.Model)</td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
-                            @Html.ActionLink("Confirm", "Confirm", new { id = item.Id })
+                            @Html.ActionLink(ResOrders.Orders_Index.Edit, "Edit", new { id = item.Id }) |
+                            @Html.ActionLink(ResOrders.Orders_Index.Delete, "Delete", new { id = item.Id }) |
+                            @Html.ActionLink(ResOrders.Orders_Index.Confirm, "Confirm", new { id = item.Id })
                         </td>
                     </tr>
                 }

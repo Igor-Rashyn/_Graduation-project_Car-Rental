@@ -117,55 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Administration" xml:space="preserve">
-    <value>Administration</value>
+  <data name="Application" xml:space="preserve">
+    <value>Application №</value>
   </data>
-  <data name="Cars" xml:space="preserve">
-    <value>Cars</value>
+  <data name="Car" xml:space="preserve">
+    <value>Car №</value>
   </data>
-  <data name="Contact" xml:space="preserve">
-    <value>Contact</value>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create New</value>
   </data>
-  <data name="Diagnostics" xml:space="preserve">
-    <value>Diagnostics</value>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
   </data>
-  <data name="en" xml:space="preserve">
-    <value>en</value>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
   </data>
-  <data name="Hello" xml:space="preserve">
-    <value>Hello</value>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
   </data>
-  <data name="IgorRashyn" xml:space="preserve">
-    <value>Igor Rashyn</value>
-  </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Log in</value>
-  </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>Log Off</value>
-  </data>
-  <data name="ManagingCars" xml:space="preserve">
-    <value>Managing the list of cars</value>
-  </data>
-  <data name="ManagingNews" xml:space="preserve">
-    <value>Managing the list of news</value>
-  </data>
-  <data name="ManagingRolesUsers" xml:space="preserve">
-    <value>Managing Roles and Users</value>
-  </data>
-  <data name="Orders" xml:space="preserve">
-    <value>Orders</value>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
-  </data>
-  <data name="ru" xml:space="preserve">
-    <value>ru</value>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>Total Price</value>
   </data>
 </root>

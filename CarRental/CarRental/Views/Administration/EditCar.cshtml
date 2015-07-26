@@ -9,7 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit Car</h2>
+<h2>@ResAdministration.Administration_EditCar.EditCar</h2>
 
 @using (Html.BeginForm("EditCar", "Administration", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -22,9 +22,6 @@
         @Html.HiddenFor(c => c.Status)
         @Html.HiddenFor(c => c.StatusRu)
         @Html.HiddenFor(c => c.PictureId)
-        @*<div class="form-group">
-            <img src='@Url.Action("RenderImage", "Administration", new { Id = Model.Id}, @Request.Url.Scheme)' style="height:150px;" id="image" />
-        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(c => c.Brand, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -118,20 +115,11 @@
             </div>
         </div>
 
-        @*<div class="form-group">
-                @Html.LabelFor(c => c.Picture, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="fileinput fileinput-new col-md-9" data-provides="fileinput">
-                    <span class="btn btn-info btn-sm btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="image"></span>
-                    <span class="fileinput-filename"></span>
-                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
-                </div>
-            </div>*@
-
         <div class="form-group">
             <div style="position:relative;">
-                <label>Картинка</label>
+                <label>@ResAdministration.Administration_EditCar.Image</label>
                 <a class='btn' href='javascript:;'>
-                    Выберите файл...
+                    @ResAdministration.Administration_EditCar.Image
                     <input type="file" name="img" size="40"
                            style="position:absolute;z-index:2;top:0;
                                 left:0;filter: alpha(opacity=0); opacity:0;
@@ -142,7 +130,7 @@
             </div>
             @if (Model.Picture == null)
                 {
-                <div class="form-control-static">Нет картинки</div>
+                <div class="form-control-static">@ResAdministration.Administration_EditCar.NoPicture</div>
             }
             else
             {
@@ -152,14 +140,17 @@
             }
         </div>
 
-
             <div class="form-group">
                 <div class="col-md-offset-9 col-md-3">
                     <input type="submit" value="Сохранить" class="btn btn-primary" />
-                    @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+                    @Html.ActionLink(ResAdministration.Administration_EditCar.Cancle, "Index", null, new { @class = "btn btn-default" })
                 </div>
             </div>
 
         </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
 

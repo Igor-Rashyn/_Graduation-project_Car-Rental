@@ -9,7 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Creation Car</h2>
+<h2>@ResAdministration.Administration_CreationCar.CreationCar</h2>
 
    @using (Html.BeginForm("CreationCar", "Administration", FormMethod.Post, new { enctype = "multipart/form-data" }))
    {
@@ -112,19 +112,21 @@
             <div class="form-group">
                 @Html.LabelFor(c => c.Picture, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="fileinput fileinput-new col-md-9" data-provides="fileinput">
-                    <span class="btn btn-info btn-sm btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="image"></span>
+                    <span class="btn btn-info btn-sm btn-file"><span class="fileinput-new">@ResAdministration.Administration_CreationCar.SelectFile</span><span class="fileinput-exists">@ResAdministration.Administration_CreationCar.Change</span><input type="file" name="image"></span>
                     <span class="fileinput-filename"></span>
                     <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
                 </div>
             </div>
 
-
             <div class="form-group">
                 <div class="col-md-offset-9 col-md-3">
                     <input type="submit" value="Сохранить" class="btn btn-primary" />
-                    @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+                    @Html.ActionLink(ResAdministration.Administration_CreationCar.Cancel, "Index", null, new { @class = "btn btn-default" })
                 </div>
             </div>
 
         </div>
     }
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")
+}

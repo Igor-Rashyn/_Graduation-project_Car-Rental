@@ -3,7 +3,7 @@
 @model Order
 
 
-<h3 class="text-center" style="background-color:rgb(217, 217, 216)"> Renter Information </h3>
+<h3 class="text-center" style="background-color:rgb(217, 217, 216)"> @ResCars.Cars_Order.RenterInformation </h3>
 <div class="form-group row">
     <div class="col-md-6">
         <div class="form-group">
@@ -13,14 +13,14 @@
                 @Html.ValidationMessageFor(o => o.PickupLocation, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(o => o.PickupDateTime, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-9">
-                @Html.EditorFor(o => o.PickupDateTime, new { htmlAttributes = new { @Value = Model.PickupDateTime.ToString("yyyy-MM-dd"), @class = "form-control", type = "date" } })
-                @Html.ValidationMessageFor(o => o.PickupDateTime, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(o => o.PickupDateTime, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(o => o.PickupDateTime, new { htmlAttributes = new { @Value = Model.PickupDateTime.ToString("yyyy-MM-dd"), @class = "form-control", type = "date" } })
+                    @Html.ValidationMessageFor(o => o.PickupDateTime, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
-    </div>
     <div class="col-md-6">
         <div class="form-group">
             @Html.LabelFor(o => o.ReturnLocation, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -29,6 +29,7 @@
                 @Html.ValidationMessageFor(o => o.ReturnLocation, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             @Html.LabelFor(o => o.ReturnDateTime, htmlAttributes: new { @class = "control-label col-md-3" })
             <div class="col-md-9">
@@ -78,10 +79,9 @@
             @Html.LabelFor(o => o.DateOfBirthday, htmlAttributes: new { @class = "control-label col-md-3" })
             <div class="col-md-9">
                 @Html.EditorFor(o => o.DateOfBirthday, new { htmlAttributes = new { @Value = Model.DateOfBirthday.ToString("yyyy-MM-dd"), @class = "form-control", type = "date" } })
-                @Html.ValidationMessageFor(o => o.DateOfBirthday, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(o => o.DateOfBirthday, "", new { @class = "text-danger"})
             </div>
         </div>
-
 
     </div>
     <div class="col-md-6">

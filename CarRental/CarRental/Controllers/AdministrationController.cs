@@ -10,9 +10,11 @@ using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 using Microsoft.AspNet.Identity;
 using System.Data.Entity.Migrations;
+using CarRental.Filters;
 
 namespace CarRental.Controllers
 {
+    [Culture]
     public class AdministrationController : Controller
     {
         IdentityDb context = new IdentityDb();

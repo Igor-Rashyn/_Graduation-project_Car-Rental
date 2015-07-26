@@ -213,6 +213,191 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Order.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_Create.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_Create.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_Create.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_Create.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_CreateUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_CreateUser.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_CreateUser.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_CreateUser.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_CreationCar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_CreationCar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_CreationCar.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_CreationCar.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_Edit.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_Edit.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_EditCar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_EditCar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_EditCar.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_EditCar.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_Index.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_Index.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_ListOfCars.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_ListOfCars.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_ListOfCars.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_ListOfCars.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_ManageUserRoles.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_ManageUserRoles.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Administration\Administration_ManageUserRoles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Administration_ManageUserRoles.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Cars\Cars_Index.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cars_Index.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Cars\Cars_Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cars_Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Cars\Cars_Order.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cars_Order.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Cars\Cars_Order.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cars_Order.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Diagnostics\Diagnostics_Create.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Diagnostics_Create.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Diagnostics\Diagnostics_Create.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Diagnostics_Create.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Diagnostics\Diagnostics_Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Diagnostics_Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Home\Home_Cars.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home_Cars.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Home\Home_Cars.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home_Cars.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Home\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Home\Index.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\ItemsList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemsList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\ItemsList.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemsList.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Layout.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Orders\Orders_Edit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Orders_Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Orders\Orders_Edit.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Orders_Edit.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Orders\Orders_Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Orders_Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Orders\Orders_Index.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Orders_Index.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\SortView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SortView.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\SortView.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SortView.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -239,6 +424,7 @@
       <DependentUpon>201507200751237_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
+    <Compile Include="Filters\CultureAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -643,7 +829,6 @@
     <Content Include="Views\Administration\Create.cshtml" />
     <Content Include="Views\Administration\Edit.cshtml" />
     <Content Include="Views\Administration\ManageUserRoles.cshtml" />
-    <Content Include="Views\Administration\Test.cshtml" />
     <Content Include="Views\Home\ItemsList.cshtml" />
     <Content Include="Views\Cars\Index.cshtml" />
     <Content Include="Views\Shared\SortView.cshtml" />
@@ -789,12 +974,6 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\Home.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_LocalResources\Home.ru.resx" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Car.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Car.Designer.cs</LastGenOutput>
@@ -824,6 +1003,192 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Order.ru.designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_Create.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_Create.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_CreateUser.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_CreateUser.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_CreateUser.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_CreateUser.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_CreationCar.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_CreationCar.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_CreationCar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_CreationCar.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_Edit.ru.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_Edit.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_EditCar.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_EditCar.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_EditCar.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_EditCar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_Index.ru.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_Index.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_Index.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_ListOfCars.ru.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_ListOfCars.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_ListOfCars.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_ListOfCars.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_ManageUserRoles.ru.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_ManageUserRoles.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Administration\Administration_ManageUserRoles.resx">
+      <CustomToolNamespace>ResAdministration</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Administration_ManageUserRoles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Cars\Cars_Index.ru.resx">
+      <CustomToolNamespace>ResCars</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cars_Index.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Cars\Cars_Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cars_Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResCars</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Cars\Cars_Order.ru.resx">
+      <CustomToolNamespace>ResCars</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cars_Order.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Cars\Cars_Order.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cars_Order.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResCars</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Diagnostics\Diagnostics_Create.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Diagnostics_Create.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResDiagnostics</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Diagnostics\Diagnostics_Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Diagnostics_Create.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResDiagnostics</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Diagnostics\Diagnostics_Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Diagnostics_Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResDiagnostics</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="App_LocalResources\Diagnostics\Diagnostics_Index.ru.resx" />
+    <EmbeddedResource Include="App_LocalResources\Home\Home_Cars.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home_Cars.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Home\Home_Cars.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home_Cars.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Home\Index.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Home\Index.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\ItemsList.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ItemsList.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\ItemsList.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ItemsList.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Layout.ru.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Orders\Orders_Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Orders_Edit.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResOrders</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Orders\Orders_Edit.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Orders_Edit.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResOrders</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Orders\Orders_Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Orders_Index.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResOrders</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Orders\Orders_Index.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Orders_Index.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResOrders</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\SortView.ru.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SortView.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\SortView.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SortView.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\AppMigrations\201507200752315_InitialCreate.resx">
       <DependentUpon>201507200752315_InitialCreate.cs</DependentUpon>

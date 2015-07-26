@@ -67,8 +67,7 @@ namespace CarRental
             bundles.Add(new ScriptBundle("~/Content/kendo/css").Include(
                  "~/Content/kendo/kendo.common-bootstrap.min.css",
                  "~/Content/kendo/kendo.material.min.css",
-                 "~/Content/kendo/kendo.bootstrap.min.css"));
-           
+                 "~/Content/kendo/kendo.bootstrap.min.css"));       
         }
     }
 }
