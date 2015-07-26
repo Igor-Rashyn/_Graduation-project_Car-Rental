@@ -130,3 +130,4 @@ D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Orders.Orders_Index.ru.resources
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.SortView.ru.resources
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Diagnostics.Diagnostics_Index.resources
+D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.csprojResolveAssemblyReference.cache
