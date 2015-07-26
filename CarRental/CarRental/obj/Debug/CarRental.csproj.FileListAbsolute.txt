@@ -51,7 +51,6 @@ D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.S
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.Security.Google.xml
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.csprojResolveAssemblyReference.cache
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Car.resources
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Diagnostics.resources
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Order.resources

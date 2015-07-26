@@ -257,7 +257,7 @@ namespace CarRental.Controllers
                 };
             }
 
-            catch (Exception ex)
+            catch
             {
             }
         }
