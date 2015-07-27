@@ -184,32 +184,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\Car.Designer.cs">
+    <Compile Include="App_LocalResources\Car.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Car.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Car.ru.designer.cs">
+    <Compile Include="App_LocalResources\Car.ru.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Car.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Diagnostics.Designer.cs">
+    <Compile Include="App_LocalResources\Diagnostics.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Diagnostics.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Diagnostics.ru.designer.cs">
+    <Compile Include="App_LocalResources\Diagnostics.ru.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Diagnostics.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Order.Designer.cs">
+    <Compile Include="App_LocalResources\Order.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Order.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\Order.ru.designer.cs">
+    <Compile Include="App_LocalResources\Order.ru.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Order.ru.resx</DependentUpon>
@@ -966,6 +966,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
@@ -977,32 +978,32 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Car.resx">
+    <EmbeddedResource Include="App_LocalResources\Car.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Car.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Car.ru.resx">
+    <EmbeddedResource Include="App_LocalResources\Car.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Car.ru.designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Diagnostics.resx">
+    <EmbeddedResource Include="App_LocalResources\Diagnostics.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Diagnostics.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Diagnostics.ru.resx">
+    <EmbeddedResource Include="App_LocalResources\Diagnostics.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Diagnostics.ru.designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Order.resx">
+    <EmbeddedResource Include="App_LocalResources\Order.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Order.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Order.ru.resx">
+    <EmbeddedResource Include="App_LocalResources\Order.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Order.ru.designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>

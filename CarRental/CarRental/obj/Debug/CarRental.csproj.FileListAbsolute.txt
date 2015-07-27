@@ -51,12 +51,6 @@ D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.S
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.Security.Google.xml
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Car.resources
-D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Diagnostics.resources
-D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Order.resources
-D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Car.ru.resources
-D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Diagnostics.ru.resources
-D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_GlobalResources.Order.ru.resources
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.csproj.GenerateResource.Cache
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\ru\CarRental.resources.dll
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.dll
@@ -131,3 +125,9 @@ D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.SortView.ru.resources
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Diagnostics.Diagnostics_Index.resources
 D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.csprojResolveAssemblyReference.cache
+D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Car.resources
+D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Diagnostics.resources
+D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Order.resources
+D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Car.ru.resources
+D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Diagnostics.ru.resources
+D:\Document\Programs\Projects\Cars rent\CarRental\CarRental\obj\Debug\CarRental.App_LocalResources.Order.ru.resources
