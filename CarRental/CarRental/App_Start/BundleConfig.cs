@@ -41,7 +41,7 @@ namespace CarRental
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/site.css",
                 "~/Content/bootstrap-datetimepicker.css"));
@@ -64,7 +64,7 @@ namespace CarRental
                  "~/Scripts/kendo/kendo.autocomplete.min.js",
                  "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
 
-            bundles.Add(new ScriptBundle("~/Content/kendo/css").Include(
+            bundles.Add(new ScriptBundle("~/bundles/kendo/css").Include(
                  "~/Content/kendo/kendo.common-bootstrap.min.css",
                  "~/Content/kendo/kendo.material.min.css",
                  "~/Content/kendo/kendo.bootstrap.min.css"));       

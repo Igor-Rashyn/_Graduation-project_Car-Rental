@@ -262,8 +262,6 @@ namespace CarRental.Controllers
             }
         }
 
-
-
        
         private string ConvertDate (string line)
         {
@@ -279,7 +277,6 @@ namespace CarRental.Controllers
             var listStr = str.Split('.').ToList();
             return listStr[1] + "." + listStr[0] + "." + listStr[2];
         }
-
 
         private DateTime ConverDateForDatabase (DateTime date)
         {// YYYY-MM-DD HH:

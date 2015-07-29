@@ -132,33 +132,6 @@
                     });
                 });
 
-                @*$("#PickupLocation").change(function () {
-                    var pickupDate = $('#PickupDateTime').val();
-                    var pickupLocation = $('#PickupLocation').val();
-
-                    $.ajax({
-                        url: "@Url.Action("Change", "Orders")",
-                        data: { 'location': pickupLocation, 'date': pickupDate },
-                        type: "post",
-                        cache: false,
-                        success: function (data) {
-                            $('#carList').find('option').remove().end()
-                            model = data;
-
-                            $.each(data, function (id, option) {
-                                $("#carList").append($('<option></option>').val(option.Id).html(option.Brand + " " + option.Model + " (№ " + option.CarNumber + ", Price: " + option.Price + ")"));
-                            });
-
-                            setValues(0);
-                            currentCar = model[0];
-                            setPrice();
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            alert("ERROR!!!!!!!!!!!");
-                        }
-                    });
-                });*@
-
                 $("#carList").change(function () {
                     var selectedId = $('#carList').find(":selected").val();
                     var numberSelected;
