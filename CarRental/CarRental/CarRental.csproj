@@ -501,6 +501,7 @@
     <Content Include="Content\kendo\images\wp8_inverseicons.png" />
     <Content Include="Content\kendo\kendo.bootstrap.min.css" />
     <Content Include="Content\kendo\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\kendo\kendo.common.min.css" />
     <Content Include="Content\kendo\kendo.material.min.css" />
     <Content Include="Content\kendo\Material\editor.png" />
     <Content Include="Content\kendo\Material\imagebrowser.png" />
