@@ -126,6 +126,9 @@
   <data name="CreationCar" xml:space="preserve">
     <value>Creation Car</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="SelectFile" xml:space="preserve">
     <value>Select file</value>
   </data>

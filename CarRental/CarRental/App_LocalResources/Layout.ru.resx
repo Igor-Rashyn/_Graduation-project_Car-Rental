@@ -130,7 +130,7 @@
     <value>Центр диагностики</value>
   </data>
   <data name="en" xml:space="preserve">
-    <value>анг</value>
+    <value>en</value>
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Здраствуйте</value>
@@ -166,6 +166,6 @@
     <value>Регистрация</value>
   </data>
   <data name="ru" xml:space="preserve">
-    <value>ру</value>
+    <value>ru</value>
   </data>
 </root>

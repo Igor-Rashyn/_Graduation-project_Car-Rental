@@ -45,7 +45,7 @@
                 <ul class="nav navbar-nav">
                     <li class="@Html.IsSelected(controller: "Home", action: "Index")">@Html.ActionLink(Resources.Layout.Home, "Index", "Home")</li>
                     <li class="@Html.IsSelected(controller: "Cars", action: "Index")">@Html.ActionLink(Resources.Layout.Cars, "Index", "Cars")</li>
-                    <li class="@Html.IsSelected(action: "Contact")">@Html.ActionLink(Resources.Layout.Contact, "Contact", "Home")</li>
+                 @*   <li class="@Html.IsSelected(action: "Contact")">@Html.ActionLink(Resources.Layout.Contact, "Contact", "Home")</li>*@
                     @if (Request.IsAuthenticated)
                     {
                         if (User.IsInRole("Admin") || User.IsInRole("CarFleet"))
