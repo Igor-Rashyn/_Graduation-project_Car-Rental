@@ -21,6 +21,7 @@ namespace CarRental.Controllers
         IRepository<Car> CarRepository;
         IRepository<Picture> PictureRepository;
 
+
         public AdministrationController(IRepository<Car> rep, IRepository<Picture> pic )
         {
             CarRepository = rep;
@@ -217,6 +218,7 @@ namespace CarRental.Controllers
         //GET: Administration/ListOfCars
         public ActionResult ListOfCars()
         {
+            HttpContext.Server.ScriptTimeout = 400;
             return View();
         }
 
@@ -328,6 +330,8 @@ namespace CarRental.Controllers
 
         public FileContentResult RenderImage(string id)
         {
+            HttpContext.Server.ScriptTimeout = 1000;
+
             Car car = CarRepository.Find(new Guid(id));
             if (car != null)
             {
