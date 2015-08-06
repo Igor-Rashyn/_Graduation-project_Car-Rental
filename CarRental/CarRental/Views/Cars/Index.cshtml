@@ -70,11 +70,18 @@
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('#inputPickupDate').datetimepicker();
-        });
-
-        $(function () {
-            $('#inputReturnDate').datetimepicker();
+            $('#inputPickupDate').datetimepicker({
+                minDate: moment()
+            });
+            $('#inputReturnDate').datetimepicker({
+                minDate: moment()
+            });
+            $("#inputPickupDate").on("dp.change", function (e) {
+                $('#inputReturnDate').data("DateTimePicker").minDate(e.date);
+            });
+            $("#inputReturnDate").on("dp.change", function (e) {
+                $('#inputPickupDate').data("DateTimePicker").maxDate(e.date);
+            });
         });
 
         $("#checkboxDifferentLocation").change(function () {

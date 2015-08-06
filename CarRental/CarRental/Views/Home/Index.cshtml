@@ -12,9 +12,9 @@
 @using(Html.BeginForm("Search", "Home", new { nameWhereParam = "Search" }, FormMethod.Get, new { @class = "form-horizontal" }))
 {
                         @Html.ValidationSummary(true)
-                                    <fieldset>
-                                        <legend> @Resources.Index.BookNow</legend>
-                                            <div class="form-group">
+                 <fieldset>
+                    <legend> @Resources.Index.BookNow</legend>
+                        <div class="form-group">
                             <label for="inputPickupLocation" class="col-lg-4 control-label">@Resources.Index.PickupLocation</label>
                             <div class="col-lg-8">
                                 <input type="text" class="form-control" id="inputPickupLocation" name="inputPickupLocation" placeholder='@Resources.Index.PickupLocation'>
@@ -123,19 +123,27 @@
 
 @section scripts {
     <script type="text/javascript">
-        $(function () {
-            $('#inputPickupDate').datetimepicker();
-        });
 
         $(function () {
-            $('#inputReturnDate').datetimepicker();
+            $('#inputPickupDate').datetimepicker({
+                        minDate: moment()
+                    });
+            $('#inputReturnDate').datetimepicker({
+                minDate: moment()
+            });
+            $("#inputPickupDate").on("dp.change", function (e) {
+                $('#inputReturnDate').data("DateTimePicker").minDate(e.date);
+            });
+            $("#inputReturnDate").on("dp.change", function (e) {
+                $('#inputPickupDate').data("DateTimePicker").maxDate(e.date);
+            });
         });
 
         $("#checkboxDifferentLocation").change(function () {
             if(this.checked) { 
-                $('#formReturnLocation').removeClass('hidden'); // удалить
+                $('#formReturnLocation').removeClass('hidden');
             } else {
-                $('#formReturnLocation').addClass('hidden'); // добавить класс
+                $('#formReturnLocation').addClass('hidden');
             }
         });
     </script>

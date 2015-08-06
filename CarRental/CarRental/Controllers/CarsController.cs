@@ -32,9 +32,15 @@ namespace CarRental.Controllers
         }
        
         // GET: Cars/Index
-       public ActionResult Index(string inputPickupLocation, string inputReturnLocation, string inputPickupDate, string inputReturnDate, string sortOrder, bool? checkboxDifferentLocation, string currentFilter, string searchString, string nameWhereParam= "Available", int page = 1)
+       public ActionResult Index(string inputPickupLocation, string inputReturnLocation, string inputPickupDate, string inputReturnDate, string sortOrder, bool? checkboxDifferentLocation, string currentFilter, string searchString, int page = 1)
         {
             IEnumerable<Car> sortCars;
+
+            if (checkboxDifferentLocation==false || checkboxDifferentLocation==null)
+            {
+                inputReturnLocation = inputPickupLocation;
+            }
+
 
             Session["CurrentSort"] = sortOrder;
             Session["PriceSortParm"]=sortOrder=="Price_Up" ? "Price_Down" : "Price_Up";

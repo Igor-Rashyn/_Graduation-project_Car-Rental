@@ -28,27 +28,6 @@ namespace CarRental.Controllers
 
         public ActionResult Index()
         {
-            //byte[] bb = System.Text.Encoding.UTF8.GetBytes("KAPUSTA");
-            //Car car = new Car();
-            //car.Brand = "Mercedes"; // Opel, BMW, Toyota
-            //car.Model = "600"; // Mega, 700, Corola
-            //car.Passengers = 5; //4,2
-            //car.Location = "Wellington"; // Auckland
-            //car.FuelConsumption = 12; // 7, 6, 15
-            //car.Price = 45; // 32, 12,20
-            //car.AirConditioning = true;
-            //car.AmountOfLuggage = "2 large luggage";
-            //car.AmountOfLuggageRu = "2 больших багажа";
-            //car.Transmission = true;
-            //car.Id = Guid.NewGuid();
-            //car.DateOfChange = DateTime.Now;
-            //car.DateOfCreation = DateTime.Now;
-            //car.PickupDateTime = DateTime.Now; // сделать у одного
-            //car.ReturnDateTime = DateTime.Now; //
-            //car.Picture = bb;
-            //CarRepository.Create(car);
-            //CarRepository.GetAll();
-
             return View();
         }
 
@@ -77,9 +56,9 @@ namespace CarRental.Controllers
             return Redirect(returnUrl);
         }
 
-        public ActionResult Search(string inputPickupLocation, string inputReturnLocation, string inputPickupDate, string inputReturnDate)
+        public ActionResult Search(string inputPickupLocation, string inputReturnLocation, string inputPickupDate, string inputReturnDate, bool? checkboxDifferentLocation)
         {
-            return RedirectToAction("Index","Cars", new { nameWhereParam = "Search", inputPickupLocation=inputPickupLocation, inputPickupDate=inputPickupDate });
+            return RedirectToAction("Index","Cars", new { searchString = "Search", inputPickupLocation=inputPickupLocation, inputReturnLocation= inputReturnLocation, inputPickupDate =inputPickupDate, inputReturnDate= inputReturnDate, checkboxDifferentLocation = checkboxDifferentLocation });
         }
 
 
